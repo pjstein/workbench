@@ -104,6 +104,8 @@ and *vice versa*. In the situation set up in Ex. 1, the directory on the user's
 filesystem would be mounted as `/opt/my-great-project` in the virtual machine.
 This process is demonstrated in the example below.
 
+    [Ex. 2]
+
     waffles:workbench pstein$ ls
     README.md Vagrantfile cookbooks
     waffles:workbench pstein$ touch hello-world
