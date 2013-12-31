@@ -41,9 +41,9 @@ Vagrant.configure(V_API_VERSION) do |config|
       driver.gui  = false
       driver.name = PROJECT_NAME
   
-      driver.customize ['modifyvm', :id, '--cpus'               , '4'         ]
-      driver.customize ['modifyvm', :id, '--memory'             , '1024'      ]
-      driver.customize ['modifyvm', :id, '--natdnshostresolver1', 'on'        ]
+      driver.customize ['modifyvm', :id, '--cpus'               , '4'   ]
+      driver.customize ['modifyvm', :id, '--memory'             , '1024']
+      driver.customize ['modifyvm', :id, '--natdnshostresolver1', 'on'  ]
 
       override.ssh.forward_agent = true
     end
