@@ -145,9 +145,5 @@ which should be used by developers, engineers and normal folks alike!
 
 1. Make sure that [the box](http://chickenandwaffl.es/boxes/ubuntu-12.04-x86_64.box)
 stays online. If I move it, remember to update the reference in the `Vagrantfile`.
-2. The IP address is set in the `Vagrantfile` (it's the `IP_ADDRESS` thing). If
-you're going to spin up more than on `workbench` box, then you'll need to change
-it based on the project. Maybe I can automate that by hashing the project
-name? I'm not super sure that's necessary, but worth keeping in mind.
 
 -PJ$, 12.29.2013

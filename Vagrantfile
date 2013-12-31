@@ -12,7 +12,6 @@
 
 V_API_VERSION   = '2'
 VM_IMAGE_URL    = 'http://chickenandwaffl.es/boxes/ubuntu-12.04-x86_64.box'
-IP_ADDRESS      = '33.33.33.23'
 
 COOKBOOKS_DIR   = './cookbooks'
 RUNLIST_CONFIG  = '.workbench.runlist'
@@ -36,16 +35,16 @@ Vagrant.configure(V_API_VERSION) do |config|
     node.vm.box      = 'workbench-ubuntu-12.04-x86_64'
     node.vm.box_url  = "#{VM_IMAGE_URL}"
     node.vm.hostname = "#{PROJECT_NAME}.local"
-    node.vm.network    :private_network, :ip => IP_ADDRESS
+    node.vm.network    :private_network, type: :dhcp
   
     node.vm.provider :virtualbox do |driver, override|
       driver.gui  = false
       driver.name = PROJECT_NAME
   
-      driver.customize ['modifyvm', :id, '--cpus'               , '4'   ]
-      driver.customize ['modifyvm', :id, '--memory'             , '1024']
-      driver.customize ['modifyvm', :id, '--natdnshostresolver1', 'on'  ]
-  
+      driver.customize ['modifyvm', :id, '--cpus'               , '4'         ]
+      driver.customize ['modifyvm', :id, '--memory'             , '1024'      ]
+      driver.customize ['modifyvm', :id, '--natdnshostresolver1', 'on'        ]
+
       override.ssh.forward_agent = true
     end
   
